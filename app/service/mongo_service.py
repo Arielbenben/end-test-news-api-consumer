@@ -13,7 +13,6 @@ def validate_location(location: dict):
         return location['country']
     return None
 
-
 def prepare_terrorist_group():
     return {
         'name': None,
@@ -31,7 +30,6 @@ def prepare_date(article):
             'full_date': date_time
         }
     return {'day': None, 'month': None, 'year': None, 'full_date': None}
-
 
 def prepare_attack(article):
     return {
@@ -70,11 +68,9 @@ def prepare_attack_to_dict(article: dict, extract_location: dict, coordinates: d
         'casualties': prepare_casualties()
     }
 
-
 def prepare_article_and_insert_to_db(article: dict):
     extract_location = classify_and_extract_news(article)
-    print(extract_location)
-    print()
+
     if not isinstance(extract_location, dict):
         return
     if extract_location['category'] == 'General news':
