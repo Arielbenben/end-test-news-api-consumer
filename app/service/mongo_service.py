@@ -102,3 +102,6 @@ def prepare_article_and_insert_to_db(article: dict):
 
 
 
+
+
+
